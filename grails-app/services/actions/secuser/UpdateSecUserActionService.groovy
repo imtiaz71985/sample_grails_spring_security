@@ -38,7 +38,7 @@ class UpdateSecUserActionService extends BaseService implements ActionServiceInt
             }*/
             // Check existing of same secUser name
             String name = params.username.toString()
-            int duplicateCount = secUserService.countByUsernameIlikeAndIdNotEqual(name)
+            int duplicateCount = secUserService.countByUsernameIlikeAndIdNotEqual(name, id)
             if (duplicateCount > 0) {
                 return super.setError(params, USER_ALREADY_EXIST)
             }
