@@ -160,7 +160,7 @@ function load(loc) {
         type: 'post',
         url: loc,                      //+ "?ajaxid=" + new Date().getTime()
         success: function (data, textStatus) {
-            $('#contentHolder').html(data);
+            $('#page-wrapper').html(data);
             showLoadingSpinner(false);
         },
         complete: function (XMLHttpRequest, textStatus) {
@@ -339,7 +339,7 @@ function getGridHeight(numberOfGridBar) {
         totalHeight += 27;
     }
 
-    var gridHeight = $("#contentHolder").height() - ($("#application_top_panel").height() + 2 + totalHeight + extraHieght);
+    var gridHeight = $("#page-wrapper").height() - ($("#application_top_panel").height() + 2 + totalHeight + extraHieght);
     return gridHeight;
 }
 function getFullGridHeight() {
@@ -347,17 +347,17 @@ function getFullGridHeight() {
     if ($('.tDiv').length) {
         totalHeight += 27;
     }
-    var gridHeight = $("#contentHolder").height() - totalHeight;
+    var gridHeight = $("#page-wrapper").height() - totalHeight;
     return gridHeight;
 }
 
 function getFullGridHeightKendo() {
-    var gridHeight = $("#contentHolder").height() - 20;
+    var gridHeight = $("#page-wrapper").height() - 20;
     return gridHeight;
 }
 
 function getGridHeightKendo() {
-    var height = $("#contentHolder").height() - $("#application_top_panel").height() - 30;
+    var height = $("#page-wrapper").height() - $("#application_top_panel").height() - 20;
     return height;
 }
 

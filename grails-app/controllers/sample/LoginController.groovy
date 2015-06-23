@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse
 
 class LoginController {
 
-
     /**
      * Dependency injection for the authenticationTrustResolver.
      */
@@ -137,6 +136,6 @@ class LoginController {
     }
 
     def dashBoard() {
-        render(template: "../dashBoard", model: null)
+        render(template: "../layouts/dashBoard", model: null)
     }
 }

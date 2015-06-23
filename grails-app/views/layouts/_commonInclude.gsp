@@ -4,13 +4,17 @@
 <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery/featureList-1.0.0.js')}"></script>
 <script type="text/javascript" src="${resource(dir: 'js', file: 'kendo/kendo.all.min.js')}"></script>
 <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap/bootstrap.min.js')}"></script>
+<script type="text/javascript" src="${resource(dir: 'js', file: 'application.js')}"></script>
 
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'jquery/featurelist.css')}"/>
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'kendo/kendo.common.min.css')}"/>
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'kendo/kendo.dataviz.min.css')}"/>
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'kendo/kendo.silver.min.css')}"/>
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'fontawesome/css/font-awesome.min.css')}"/>
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap/css/bootstrap.min.css')}"/>
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'bootstrap/css/bootstrap-theme.min.css')}"/>
+
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'custom.css')}"/>
 
 
 <!-- MetisMenu CSS -->

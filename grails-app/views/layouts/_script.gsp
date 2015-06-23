@@ -39,12 +39,18 @@
             type: 'post',
             url: loc,
             success: function (data, textStatus) {
+                markLeftMenu(loc);
                 $('#page-wrapper').html(data);
             },
             complete: function (XMLHttpRequest, textStatus) {
 
             }
         });
+    }
+    function markLeftMenu(loc){
+        $("#navbar a").removeClass('active');
+        $("#navbar a[href='" + '#'+loc + "']").addClass('active').focus();
+
     }
 
     function redirectToLogoutPage() {
