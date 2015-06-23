@@ -1,6 +1,7 @@
 package actions.secuser
 
 import asia.grails.sample.SecUser
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.transaction.Transactional
 import org.apache.log4j.Logger
 import sample.ActionServiceIntf
@@ -17,6 +18,7 @@ class UpdateSecUserActionService extends BaseService implements ActionServiceInt
     private static final String SEC_USER = "User"
 
     SecUserService secUserService
+    SpringSecurityService springSecurityService
 
     private Logger log = Logger.getLogger(getClass())
 
@@ -96,7 +98,7 @@ class UpdateSecUserActionService extends BaseService implements ActionServiceInt
         SecUser user = new SecUser(parameterMap)
         oldSecUser.username = user.username
         oldSecUser.enabled = user.enabled
-        oldSecUser.password = user.password
+        oldSecUser.password = springSecurityService.encodePassword(user.password)
         oldSecUser.accountExpired = user.accountExpired
         oldSecUser.accountLocked = user.accountLocked
         return oldSecUser
