@@ -31,3 +31,5 @@
 
 <!-- Custom Theme JavaScript -->
 <script rel="stylesheet" src="${resource(dir: 'dist', file: 'js/sb-admin-2.js')}"></script>
+
+<g:render template='/layouts/commonTemplates'/>

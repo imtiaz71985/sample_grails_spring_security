@@ -55,7 +55,6 @@
                 setButtonDisabled($('#create'), false);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                afterAjaxError(XMLHttpRequest, textStatus)
             },
             complete: function (XMLHttpRequest, textStatus) {
                 showLoadingSpinner(false);
@@ -91,7 +90,7 @@
     }
 
     function resetForm() {
-        clearForm($("#userForm"), $('#name'));
+        clearForm($("#userForm"), $('#username'));
         initObservable();
         $('#create').html("<span class='k-icon k-i-plus'></span>Create");
     }

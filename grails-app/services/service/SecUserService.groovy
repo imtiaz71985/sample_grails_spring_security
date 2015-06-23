@@ -11,4 +11,8 @@ class SecUserService extends BaseService{
     public int countByUsernameIlike(String username){
         return SecUser.countByUsernameIlike(username)
     }
+
+    public int countByUsernameIlikeAndIdNotEqual(String username, long id){
+        return SecUser.countByUsernameIlikeAndIdNotEqual(username, id)
+    }
 }

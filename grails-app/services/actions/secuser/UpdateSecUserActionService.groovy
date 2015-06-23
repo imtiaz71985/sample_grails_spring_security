@@ -15,7 +15,7 @@ class UpdateSecUserActionService extends BaseService implements ActionServiceInt
     private static final String USER_ALREADY_EXIST = "Same User name already exist"
     private static final String INVALID_INPUT_MSG = "Failed to update User due to invalid input"
     private static final String OBJ_CHANGED_MSG = "Selected User has been changed, Refresh the page again"
-    private static final String SEC_USER = "User"
+    private static final String SEC_USER = "secUser"
 
     SecUserService secUserService
     SpringSecurityService springSecurityService
@@ -25,20 +25,20 @@ class UpdateSecUserActionService extends BaseService implements ActionServiceInt
     public Map executePreCondition(Map params) {
         try {
             //Check parameters
-            if ((!params.id) || (!params.version) || (!params.username)) {
+            if ((!params.id) || (!params.username)) {
                 return super.setError(params, INVALID_INPUT_MSG)
             }
             long id = Long.parseLong(params.id.toString())
-            long version = Long.parseLong(params.version.toString())
+            //long version = Long.parseLong(params.version.toString())
 
             //Check existing of Obj and version matching
             SecUser oldUser = (SecUser) secUserService.read(id)
-            if ((!oldUser) || oldUser.version != version) {
+            /*if ((!oldUser) || oldUser.version != version) {
                 return super.setError(params, OBJ_CHANGED_MSG)
-            }
+            }*/
             // Check existing of same secUser name
             String name = params.username.toString()
-            int duplicateCount = secUserService.countByUsernameIlike(name)
+            int duplicateCount = secUserService.countByUsernameIlikeAndIdNotEqual(name)
             if (duplicateCount > 0) {
                 return super.setError(params, USER_ALREADY_EXIST)
             }

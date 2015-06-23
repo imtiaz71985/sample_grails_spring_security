@@ -1,5 +1,21 @@
 var kendoNotificationModel;
 $(document).ready(function () {
+    var popupSpan = "<span id='globalPopupNotification' style='display:none;'></span>";
+    kendoNotificationModel = $(popupSpan).kendoNotification(
+        {
+            position: {bottom: 5, right: 10}, autoHideAfter: 3500,
+            templates: [{
+                type: "success",
+                template: $("#tmplKendoSuccess").html()
+            }, {
+                type: "error",
+                template: $("#tmplKendoError").html()
+            }, {
+                type: "info",
+                template: $("#tmplKendoInfo").html()
+            }]
+
+        }).data("kendoNotification");
 
     // for left menu click function
     $('#dockMenuHome').click(function () {
